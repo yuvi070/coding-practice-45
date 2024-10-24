@@ -64,37 +64,43 @@ class GradientGenerator extends Component {
         color1={color11}
         color2={color22}
         activeDirection
+        data-testid="gradientGenerator"
       >
         <MainHeading>Generate a CSS Color Gradient</MainHeading>
         <MainPara>Choose Direction</MainPara>
         {/* choseDirection Component */}
-        <ListContainer>
+        <ListContainer data-testid="gradientGenerator">
           {gradientDirectionsList.map(each => (
             <GradientDirectionItem
               changeActiveDirection={this.changeActiveDirection}
               each={each}
               activeDirection={activeDirection}
+              key={each.directionId}
             />
           ))}
         </ListContainer>
 
         <MainPara>Pick the colors</MainPara>
-        <MiniDiv>
+        <MiniDiv data-testid="gradientGenerator">
           <div data-testid="gradientGenerator">
             <MainPara>{color1}</MainPara>
-            <CustomInput
-              value={color1}
-              type="color"
-              onChange={this.onchangeColorInput1}
-            />
+            <div data-testid="gradientGenerator">
+              <CustomInput
+                value={color1}
+                type="color"
+                onChange={this.onchangeColorInput1}
+              />
+            </div>
           </div>
           <div data-testid="gradientGenerator">
             <MainPara>{color2}</MainPara>
-            <CustomInput
-              value={color2}
-              type="color"
-              onChange={this.onchangeColorInput2}
-            />
+            <div data-testid="gradientGenerator">
+              <CustomInput
+                value={color2}
+                type="color"
+                onChange={this.onchangeColorInput2}
+              />
+            </div>
           </div>
         </MiniDiv>
         <CustomButton type="button" onClick={this.onClickGenerate}>
