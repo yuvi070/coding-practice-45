@@ -34,6 +34,25 @@ export const ListContainer = styled.ul`
   display: flex;
   justify-content: space-between;
 `
+
+export const CustomButton = styled.button`
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px;
+  outline: none;
+  background-color: #00c9b7;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+`
+
+export const CustomInput = styled.input`
+  padding: 0px;
+  border: 0px;
+  outline: none;
+`
 // export const Div1 = styled.div`
 
 // `

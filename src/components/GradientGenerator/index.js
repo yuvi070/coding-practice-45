@@ -6,6 +6,8 @@ import {
   MainHeading,
   MiniDiv,
   MainPara,
+  CustomButton,
+  CustomInput,
 } from './styledComponents'
 import GradientDirectionItem from '../GradientDirectionItem'
 
@@ -63,8 +65,8 @@ class GradientGenerator extends Component {
         color2={color22}
         activeDirection
       >
-        <h1>Generate a CSS Color Gradient</h1>
-        <p>Choose Direction</p>
+        <MainHeading>Generate a CSS Color Gradient</MainHeading>
+        <MainPara>Choose Direction</MainPara>
         {/* choseDirection Component */}
         <ListContainer>
           {gradientDirectionsList.map(each => (
@@ -76,28 +78,28 @@ class GradientGenerator extends Component {
           ))}
         </ListContainer>
 
-        <p>Pick the colors</p>
+        <MainPara>Pick the colors</MainPara>
         <MiniDiv>
-          <div>
-            <p>{color1}</p>
-            <input
+          <div data-testid="gradientGenerator">
+            <MainPara>{color1}</MainPara>
+            <CustomInput
               value={color1}
               type="color"
               onChange={this.onchangeColorInput1}
             />
           </div>
-          <div>
-            <p>{color2}</p>
-            <input
+          <div data-testid="gradientGenerator">
+            <MainPara>{color2}</MainPara>
+            <CustomInput
               value={color2}
               type="color"
               onChange={this.onchangeColorInput2}
             />
           </div>
         </MiniDiv>
-        <button type="button" onClick={this.onClickGenerate}>
+        <CustomButton type="button" onClick={this.onClickGenerate}>
           Generate
-        </button>
+        </CustomButton>
       </Home>
     )
   }
